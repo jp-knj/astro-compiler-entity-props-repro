@@ -1,0 +1,31 @@
+
+> astro-compiler-entity-props-repro@0.0.0 repro
+> npm run build && node check-output.mjs
+
+
+> astro-compiler-entity-props-repro@0.0.0 build
+> astro build
+
+14:18:03 [types] Generated 99ms
+14:18:03 [build] output: "static"
+14:18:03 [build] mode: "static"
+14:18:03 [build] directory: /private/tmp/astro-compiler-entity-props-repro/dist/
+14:18:03 [build] Collecting build info...
+14:18:03 [build] ✓ Completed in 124ms.
+14:18:03 [build] Building static entrypoints...
+14:18:03 [vite] ✓ built in 44ms
+14:18:03 [vite] ✓ built in 7ms
+14:18:03 [build] Rearranging server assets...
+
+ generating static routes
+14:18:03   ├─ /index.html (+6ms)
+14:18:03 ✓ Completed in 13ms.
+
+14:18:03 [build] ✓ Completed in 80ms.
+14:18:03 [build] 1 page(s) built in 205ms
+14:18:03 [build] Complete!
+{"name":"ampersand","equal":false,"expected":"Tom &amp; Jerry","actual":"Tom &amp;amp; Jerry"}
+{"name":"numeric references","equal":false,"expected":"A😀","actual":"&amp;#65;&amp;#x1F600;"}
+{"name":"quotes","equal":false,"expected":"&quot;Hello&quot;","actual":"&amp;quot;Hello&amp;quot;"}
+{"name":"one level of decoding","equal":false,"expected":"&amp;amp;","actual":"&amp;amp;amp;"}
+Reproduced: 4 quoted-attribute values differ from their JavaScript string controls.

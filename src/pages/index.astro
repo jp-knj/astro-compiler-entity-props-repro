@@ -1,0 +1,24 @@
+---
+import Label from '../components/Label.astro';
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML character references in component props</title>
+  </head>
+  <body>
+    <h1>HTML character references in component props</h1>
+    <h2>Ampersand</h2>
+    <Label id="amp-control" label={'Tom & Jerry'} />
+    <Label id="amp-entity" label="Tom &amp; Jerry" />
+    <h2>Numeric references</h2>
+    <Label id="numeric-control" label={'A😀'} />
+    <Label id="numeric-entity" label="&#65;&#x1F600;" />
+    <h2>Quotes</h2>
+    <Label id="quote-control" label={'"Hello"'} />
+    <Label id="quote-entity" label="&quot;Hello&quot;" />
+    <h2>Decode one level</h2>
+    <Label id="literal-control" label={'&amp;'} />
+    <Label id="literal-entity" label="&amp;amp;" />
+  </body>
+</html>
